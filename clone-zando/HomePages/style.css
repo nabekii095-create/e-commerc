@@ -1,0 +1,75 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .contain{
+  width: 70%;
+}
+/* design nav bar */
+.contain .nav-bar{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* navbar left */
+.contain .nav-bar .navbar-left{
+  width: 40%;
+}
+.contain .nav-bar .navbar-left ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  padding: 10px 20px;
+}
+.contain .nav-bar .navbar-left ul a{
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+/* nav bar right */
+.contain .nav-bar .navbar-right{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-bar .navbar-right .logo{
+  width: 25%;
+  height: 100%;
+}
+.nav-bar .navbar-right .logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-bar .navbar-right .search-login{
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-bar .navbar-right .search{
+  background-color: aqua;
+}
+.nav-bar .navbar-right .search-login input{
+  height: 30px;
+  width: 100%;
+}
+.nav-bar .navbar-right .search-login .choice{
+  background-color: blueviolet;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
