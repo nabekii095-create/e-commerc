@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Angkor&family=Roboto:ital,wght@0,100..900;1,100..900&family=Suwannaphum:wght@100;300;400;700;900&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
 }
+/* ============= display for button order now =============== */
+.btn-ordernow{
+  display: none;
+}
+/* ============= display for button order now =============== */
 /* Scroll up to top */
 .sroll-up{
   width: 50px;
@@ -26,7 +33,7 @@
   align-items: center;
 }
 .container .contain{
-  width: 85%;
+  width: 90%;
 }
 /* ================ design nav bar ========================*/
 .contain .nav-bar{
@@ -35,6 +42,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
 }
 /* navbar left */
 .contain .nav-bar .navbar-left{
@@ -79,6 +90,11 @@
 .nav-bar .navbar-right .search-login input{
   height: 30px;
   width: 200px;
+  padding: 5px 10px;
+}
+.nav-bar .navbar-right .search-login input:focus{
+  outline: none;
+  border: 2px solid black;
 }
 .nav-bar .navbar-right .search-login .choice{
   width: 60%;
@@ -113,24 +129,24 @@
   font-weight: 600;
 }
 .login-res .btn-login{
-  color: whitesmoke;
-  background-color: green;
+  color: white;
+  background-color: black;
 }
 .login-res .btn-login:hover{
   cursor: pointer;
-  border: 3px solid green;
+  border: 3px solid black !important;
   background-color: whitesmoke;
-  color: green;
+  color: black;
 }
 .login-res .btn-register{
-  color: whitesmoke;
-  background-color: blue;
+  color: white;
+  background-color: black;
 }
 .login-res .btn-register:hover{
   cursor: pointer;
-  border: 3px solid blue;
+  border: 3px solid black !important   ;
   background-color: whitesmoke;
-  color: blue;
+  color: black;
 }
 /* ================ design nav bar ========================*/
 .contain .get-free{
@@ -216,7 +232,6 @@
 .contain .banner-slide{
   width: 100%;
   height: 300px;
-  background-color: pink;
   margin-top: 20px;
 }
 /* ============= End of banner-slide ================= */
@@ -237,30 +252,18 @@
 .des-type .see-more{
   font-size: 16px;
 }
-.contain .products{
+.contain .products {
     width: 100%;
     display: flex;
     gap: 10px;
     overflow-x: auto;
     overflow-y: hidden;
-    /* padding: 10px; */
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    scrollbar-width: thin; 
 }
 
-/* Chrome, Edge, Safari */
-.products::-webkit-scrollbar{
-    height: 8px;
-}
-
-.products::-webkit-scrollbar-thumb{
-    background: #888;
-    /* border-radius: 10px; */
-}
-
-.products::-webkit-scrollbar-track{
-    background: #eee;
+.contain .products::-webkit-scrollbar {
+    display: none;
 }
 
 .products .cart{
@@ -271,6 +274,9 @@
     scroll-snap-align: start;
     background: #fff;
     border: none;
+}
+.products .cart:hover{
+  cursor: pointer;
 }
 .products .cart .image{
   width: 100%;
@@ -302,7 +308,7 @@
 }
 .products .cart .cart-info .price-favorite .item-price{
   font-size: 18px;
-  font-weight: 600;
+  font-weight: bold;
   color: red;
 }
 .products .cart .cart-info .price-favorite .item-favorite i{
