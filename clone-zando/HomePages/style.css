@@ -176,32 +176,34 @@
   align-items: center;
   position: absolute;
   top: 80%;
-  left: 45%;
+  left: 40%;
   gap: 10px;
 }
 .btn-choose .btn-men{
   padding: 10px 30px;
   font-size: 20px;
   font-weight: bold;
-  color: green;
+  background-color: black;
+  color: white;
 }
 .btn-choose .btn-men:hover{
-  color: whitesmoke;
-  background-color: green;
+  color: black;
+  background-color: white;
   cursor: pointer;
-  border: 3px solid white;
+  border: 3px solid black;
 }
 .btn-choose .btn-women{
   padding: 10px 30px;
   font-size: 20px;
   font-weight: bold;
-  color: blue;
+  background-color: black;
+  color: white;
 }
 .btn-choose .btn-women:hover{
-  color: whitesmoke;
-  background-color: blue;
+  color: black;
+  background-color: white;
   cursor: pointer;
-  border: 3px solid white;
+  border: 3px solid black;
 }
 /* =========== End of design banner =============== */
 /* =========== design slide category ============== */
