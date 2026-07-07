@@ -230,9 +230,23 @@
 /* =========== End of slide category ==============  */
 /* ============= design banner-slide ================= */
 .contain .banner-slide{
-  width: 100%;
-  height: 300px;
-  margin-top: 20px;
+    width:100%;
+    height:400px;
+    overflow:hidden;
+}
+
+.contain .banner-slide .slide-image{
+    display:flex;
+    width:300%;             /* 3 images */
+    height:100%;
+    transition:transform .6s ease-in-out;
+}
+
+.contain .banner-slide .slide-image img{
+    width:100%;
+    /* flex-shrink:0;          Each image takes 100% of banner */
+    height:100%;
+    object-fit:cover;
 }
 /* ============= End of banner-slide ================= */
 /* =========== Design category item cart ========== */
@@ -406,3 +420,126 @@
         width: 140px;
     }
 }
+
+/* ========================== Design for page detail item ========================== */
+.contain .contain-itemDetail{
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.contain .contain-itemDetail .item-image{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-self: start;
+}
+.contain .contain-itemDetail .item-image .item-typeImage{
+  width: 20%;
+  height: fit-content;
+}
+.contain-itemDetail .item-image .item-typeImage .image-item{
+  width: 90%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  border: 2px solid black;
+  margin: auto;
+}
+.contain-itemDetail .item-image .item-typeImage .image-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contain .contain-itemDetail .item-image .item-typeDetail{
+  width: 80%;
+  height: 90%;
+  background-color: violet;
+}
+.contain .contain-itemDetail .item-image .item-typeDetail img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =============== item detail ================== */
+.contain .contain-itemDetail .item-detail{
+  width: 50%;
+  height: 100%;
+  padding: 15px;
+}
+.contain .contain-itemDetail .item-detail .itemprice-discount{
+  width: 30%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.contain .contain-itemDetail .item-detail .itemprice-discount .price-item{
+  color: red;
+  font-weight: bold;
+  font-size: 28px;
+}
+.contain .contain-itemDetail .item-detail .itemprice-discount .dis{
+  text-decoration: line-through;
+  color: black;
+}
+.contain .contain-itemDetail .item-detail .type-size button{
+  padding: 10px 30px;
+}
+.contain .contain-itemDetail .item-detail .quantity-item{
+  margin-top: 30px;
+}
+.contain .contain-itemDetail .item-detail .quantity-item button{
+  padding: 10px 30px;
+  border: 1px solid black;
+}
+.contain .contain-itemDetail .item-detail .add-to-bag{
+  width: 80%;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+.contain .contain-itemDetail .item-detail .add-to-bag .add{
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+.contain .contain-itemDetail .item-detail .item-info{
+  margin: 20px 0;
+  width: 100%;
+  height: 400px;
+  padding: 20px;
+}
+.contain .contain-itemDetail .item-detail .item-info .model-info{
+  margin: 20px 0;
+}
+.contain .contain-itemDetail .item-detail .item-info .description h3{
+  margin-bottom: 20px;
+}
+.item-detail .available-item{
+  width: 25%;
+  height: 120px;
+  /* background-color: pink; */
+  display: flex;
+  gap: 20px;
+  margin: 10px 0;
+}
+.item-detail .available-item .item{
+  width: 50%;
+  height: 100%;
+  border: 2px solid black;
+}
+.item-detail .available-item .item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ========================== End Design for page detail item ========================== */
