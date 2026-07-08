@@ -6,13 +6,20 @@
   scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
 }
-/* ============= display for button order now =============== */
-.btn-ordernow{
-  display: none;
+
+:root{
+  --primary: #1a1a2e;
+  --accent: #e63946;
+  --light: #f8f9fa;
+  --dark: #1a1a2e;
+  --text: #333333;
+  --text-light: #666666;
+  --white: #ffffff;
+  --border: #dddddd;
 }
-/* ============= display for button order now =============== */
+
 /* Scroll up to top */
-.sroll-up{
+.scroll-up{
   width: 50px;
   height: 50px;
   position: fixed;
@@ -22,7 +29,7 @@
   justify-content: center;
   align-items: center;
 }
-.sroll-up i{
+.scroll-up i{
   font-size: 30px;
 }
 /* Scroll up to top */
@@ -33,7 +40,7 @@
   align-items: center;
 }
 .container .contain{
-  width: 90%;
+  width: 85%;
 }
 /* ================ design nav bar ========================*/
 .contain .nav-bar{
@@ -45,7 +52,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: white;
+  background-color: var(--white);
 }
 /* navbar left */
 .contain .nav-bar .navbar-left{
@@ -59,10 +66,14 @@
   padding: 10px 20px;
 }
 .contain .nav-bar .navbar-left ul a{
-  color: black;
+  color: var(--dark);
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
+  transition: color .3s;
+}
+.contain .nav-bar .navbar-left ul a:hover{
+  color: var(--accent);
 }
 /* nav bar right */
 .contain .nav-bar .navbar-right{
@@ -94,7 +105,7 @@
 }
 .nav-bar .navbar-right .search-login input:focus{
   outline: none;
-  border: 2px solid black;
+  border: 2px solid var(--dark);
 }
 .nav-bar .navbar-right .search-login .choice{
   width: 60%;
@@ -129,35 +140,35 @@
   font-weight: 600;
 }
 .login-res .btn-login{
-  color: white;
-  background-color: black;
+  color: var(--white);
+  background-color: var(--dark);
 }
 .login-res .btn-login:hover{
   cursor: pointer;
-  border: 3px solid black !important;
-  background-color: whitesmoke;
-  color: black;
+  border: 3px solid var(--dark) !important;
+  background-color: var(--light);
+  color: var(--dark);
 }
 .login-res .btn-register{
-  color: white;
-  background-color: black;
+  color: var(--white);
+  background-color: var(--dark);
 }
 .login-res .btn-register:hover{
   cursor: pointer;
-  border: 3px solid black !important   ;
-  background-color: whitesmoke;
-  color: black;
+  border: 3px solid var(--dark) !important;
+  background-color: var(--light);
+  color: var(--dark);
 }
 /* ================ design nav bar ========================*/
 .contain .get-free{
   width: 100%;
-  background-color: black;
+  background-color: var(--dark);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .contain .get-free p{
-  color: whitesmoke;
+  color: var(--white);
   padding: 7px;
 }
 /* =========== design banner =============== */
@@ -183,27 +194,27 @@
   padding: 10px 30px;
   font-size: 20px;
   font-weight: bold;
-  background-color: black;
-  color: white;
+  background-color: var(--dark);
+  color: var(--white);
 }
 .btn-choose .btn-men:hover{
-  color: black;
-  background-color: white;
+  color: var(--dark);
+  background-color: var(--white);
   cursor: pointer;
-  border: 3px solid black;
+  border: 3px solid var(--dark);
 }
 .btn-choose .btn-women{
   padding: 10px 30px;
   font-size: 20px;
   font-weight: bold;
-  background-color: black;
-  color: white;
+  background-color: var(--dark);
+  color: var(--white);
 }
 .btn-choose .btn-women:hover{
-  color: black;
-  background-color: white;
+  color: var(--dark);
+  background-color: var(--white);
   cursor: pointer;
-  border: 3px solid black;
+  border: 3px solid var(--dark);
 }
 /* =========== End of design banner =============== */
 /* =========== design slide category ============== */
@@ -246,7 +257,7 @@
 
 .contain .banner-slide .slide-image img{
     width:100%;
-    /* flex-shrink:0;          Each image takes 100% of banner */
+    flex-shrink:0;
     height:100%;
     object-fit:cover;
 }
@@ -263,10 +274,17 @@
 .des-type .midyear{
   font-size: 35px;
   font-weight: bold;
-  color: red;
+  color: var(--accent);
 }
 .des-type .see-more{
   font-size: 16px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}
+.des-type .see-more:hover{
+  color: var(--accent);
+  cursor: pointer;
 }
 .contain .products {
     width: 100%;
@@ -283,16 +301,15 @@
 }
 
 .products .cart{
-    flex: 0 0 280px;      /* Fixed width */
-    border: 1px solid #ddd;
+    flex: 0 0 280px;
     height: 500px;
-    /* border-radius: 10px; */
     scroll-snap-align: start;
-    background: #fff;
-    border: none;
+    background: var(--white);
 }
 .products .cart:hover{
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: box-shadow .3s;
 }
 .products .cart .image{
   width: 100%;
@@ -312,7 +329,7 @@
 .products .cart .cart-info .item-name{
   font-size: 20px;
   font-weight: 600;
-  color: blue;
+  color: var(--dark);
 }
 .products .cart .cart-info .price-favorite{
   width: 100%;
@@ -325,7 +342,7 @@
 .products .cart .cart-info .price-favorite .item-price{
   font-size: 18px;
   font-weight: bold;
-  color: red;
+  color: var(--accent);
 }
 .products .cart .cart-info .price-favorite .item-favorite i{
   font-size: 20px;
@@ -335,17 +352,18 @@
   padding: 10px 0px;
   font-size: 16px;
   font-weight: 500;
-  color: whitesmoke;
-  background-color: green;
+  color: var(--white);
+  background-color: var(--dark);
   border-radius: 15px;
   border: none;
   align-items: end;
+  transition: all .3s;
 }
 .products .cart .cart-info .btn-ordernow:hover{
   cursor: pointer;
-  background-color: whitesmoke;
-  color: green;
-  border: 1px solid green;
+  background-color: var(--light);
+  color: var(--dark);
+  border: 1px solid var(--dark);
 }
 /* =========== End of design category item cart ========== */
 /* =========== design fotter section============== */
@@ -362,20 +380,20 @@
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 22px;
-    color: #111;
+    color: var(--dark);
 }
 .footer-column a {
     display: flex;
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: #222;
+    color: var(--text);
     font-size: 16px;
     margin-bottom: 15px;
     transition: .3s;
 }
 .footer-column a:hover {
-    color: #000;
+    color: var(--accent);
 }
 .footer-column i {
     width: 18px;
@@ -403,23 +421,127 @@
 }
 /* Responsive */
 @media (max-width: 1200px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr);
+    .container .contain{
+        width: 95%;
+    }
+    .contain .nav-bar .navbar-left ul a{
+        font-size: 16px;
+    }
+    .nav-bar .navbar-right .search-login input{
+        width: 150px;
     }
 }
-@media (max-width: 768px) {
 
+@media (max-width: 992px) {
+    .contain .nav-bar{
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+    .contain .nav-bar .navbar-left{
+        width: 100%;
+    }
+    .contain .nav-bar .navbar-left ul{
+        justify-content: center;
+        gap: 15px;
+        padding: 5px;
+    }
+    .contain .nav-bar .navbar-left ul a{
+        font-size: 14px;
+    }
+    .contain .nav-bar .navbar-right{
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-bar .navbar-right .logo{
+        width: 150px;
+    }
+    .nav-bar .navbar-right .search-login{
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-bar .navbar-right .search-login input{
+        width: 100%;
+    }
+    .nav-bar .navbar-right .search-login .choice{
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+    .contain .banner{
+        height: 50vh;
+    }
+    .contain .banner .btn-choose{
+        width: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .des-type .midyear{
+        font-size: 24px;
+    }
+    .contain .contain-itemDetail{
+        flex-direction: column;
+        height: auto;
+    }
+    .contain .contain-itemDetail .item-image{
+        width: 100%;
+    }
+    .contain .contain-itemDetail .item-detail{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
     .footer {
         padding: 35px 20px;
-    }
-
-    .container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
-
+    .container .contain{
+        width: 100%;
+    }
+    .contain .banner{
+        height: 40vh;
+    }
+    .contain .banner .btn-choose .btn-men,
+    .contain .banner .btn-choose .btn-women{
+        padding: 8px 20px;
+        font-size: 16px;
+    }
     .qr-code {
-        width: 140px;
+        width: 100px;
+    }
+    .contain .slide-category .card{
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contain .nav-bar .navbar-left ul{
+        gap: 8px;
+    }
+    .contain .nav-bar .navbar-left ul a{
+        font-size: 12px;
+    }
+    .nav-bar .navbar-right .search-login .choice .login-res button{
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    .footer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .des-type .midyear{
+        font-size: 18px;
+    }
+    .products .cart{
+        flex: 0 0 200px;
+        height: 400px;
+    }
+    .contain .banner{
+        height: 30vh;
     }
 }
 
@@ -448,7 +570,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 5px;
-  border: 2px solid black;
+  border: 2px solid var(--dark);
   margin: auto;
 }
 .contain-itemDetail .item-image .item-typeImage .image-item img{
@@ -459,7 +581,7 @@
 .contain .contain-itemDetail .item-image .item-typeDetail{
   width: 80%;
   height: 90%;
-  background-color: violet;
+  background-color: var(--light);
 }
 .contain .contain-itemDetail .item-image .item-typeDetail img{
   width: 100%;
@@ -480,13 +602,13 @@
   align-items: center;
 }
 .contain .contain-itemDetail .item-detail .itemprice-discount .price-item{
-  color: red;
+  color: var(--accent);
   font-weight: bold;
   font-size: 28px;
 }
 .contain .contain-itemDetail .item-detail .itemprice-discount .dis{
   text-decoration: line-through;
-  color: black;
+  color: var(--text-light);
 }
 .contain .contain-itemDetail .item-detail .type-size button{
   padding: 10px 30px;
@@ -496,7 +618,7 @@
 }
 .contain .contain-itemDetail .item-detail .quantity-item button{
   padding: 10px 30px;
-  border: 1px solid black;
+  border: 1px solid var(--dark);
 }
 .contain .contain-itemDetail .item-detail .add-to-bag{
   width: 80%;
@@ -509,8 +631,8 @@
   height: 100%;
   border: none;
   border-radius: 10px;
-  background-color: black;
-  color: white;
+  background-color: var(--dark);
+  color: var(--white);
   font-size: 20px;
   cursor: pointer;
 }
@@ -537,7 +659,7 @@
 .item-detail .available-item .item{
   width: 50%;
   height: 100%;
-  border: 2px solid black;
+  border: 2px solid var(--dark);
 }
 .item-detail .available-item .item img{
   width: 100%;
@@ -545,3 +667,85 @@
   object-fit: cover;
 }
 /* ========================== End Design for page detail item ========================== */
+
+/* ========================== Auth pages (Login/Register) ========================== */
+.auth-section{
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+.auth-form{
+  width: 420px;
+  background: var(--white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+.auth-form h2{
+  font-size: 28px;
+  color: var(--dark);
+  margin-bottom: 8px;
+  text-align: center;
+}
+.auth-form .auth-subtitle{
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+.auth-form .form-group{
+  margin-bottom: 20px;
+}
+.auth-form .form-group label{
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.auth-form .form-group input{
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border .3s;
+}
+.auth-form .form-group input:focus{
+  outline: none;
+  border-color: var(--dark);
+}
+.auth-form .btn-submit{
+  width: 100%;
+  padding: 14px;
+  background-color: var(--dark);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s;
+  margin-top: 10px;
+}
+.auth-form .btn-submit:hover{
+  background-color: var(--accent);
+}
+.auth-form .auth-link{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text-light);
+}
+.auth-form .auth-link a{
+  color: var(--dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+.auth-form .auth-link a:hover{
+  color: var(--accent);
+}
+/* ========================== End Auth pages ========================== */

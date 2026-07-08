@@ -20,128 +20,120 @@
       width: 85%;
     }
 
-    /* Nav bar */
-
-    .contain .nav-bar {
+    /* ================ design nav bar ========================*/
+    .contain .nav-bar{
       width: 100%;
       height: 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: white;
     }
-
     /* navbar left */
-    .contain .nav-bar .navbar-left {
+    .contain .nav-bar .navbar-left{
       width: 35%;
     }
-
-    .contain .nav-bar .navbar-left ul {
+    .contain .nav-bar .navbar-left ul{
       display: flex;
       justify-content: space-between;
       align-items: center;
       list-style-type: none;
       padding: 10px 20px;
     }
-
-    .contain .nav-bar .navbar-left ul a {
+    .contain .nav-bar .navbar-left ul a{
       color: black;
       font-size: 20px;
       font-weight: 600;
       text-decoration: none;
     }
-
     /* nav bar right */
-    .contain .nav-bar .navbar-right {
+    .contain .nav-bar .navbar-right{
       width: 60%;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
-    .nav-bar .navbar-right .logo {
+    .nav-bar .navbar-right .logo{
       width: 25%;
       height: 100%;
     }
-
-    .nav-bar .navbar-right .logo img {
+    .nav-bar .navbar-right .logo img{
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-
-    .nav-bar .navbar-right .search-login {
+    
+    .nav-bar .navbar-right .search-login{
       width: 70%;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
-    .nav-bar .navbar-right .search-login input {
+    .nav-bar .navbar-right .search-login input{
       height: 30px;
       width: 200px;
+      padding: 5px 10px;
     }
-
-    .nav-bar .navbar-right .search-login .choice {
+    .nav-bar .navbar-right .search-login input:focus{
+      outline: none;
+      border: 2px solid black;
+    }
+    .nav-bar .navbar-right .search-login .choice{
       width: 60%;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
-    .nav-bar .navbar-right .search-login .choice .navbar-icon {
+    .nav-bar .navbar-right .search-login .choice .navbar-icon{
       width: 33%;
       height: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
-    .nav-bar .navbar-right .search-login .choice .navbar-icon i {
+    .nav-bar .navbar-right .search-login .choice .navbar-icon i{
       font-size: 22px;
     }
-
-    .nav-bar .navbar-right .search-login .choice .navbar-icon i:hover {
+    .nav-bar .navbar-right .search-login .choice .navbar-icon i:hover{
       cursor: pointer;
     }
-
-    .nav-bar .navbar-right .search-login .choice .login-res {
+    .nav-bar .navbar-right .search-login .choice .login-res{
       width: 65%;
       height: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
-    .nav-bar .navbar-right .search-login .choice .login-res button {
+    .nav-bar .navbar-right .search-login .choice .login-res button{
       border: none;
       padding: 10px 25px;
       font-size: 16px;
       font-weight: 600;
     }
-
-    .login-res .btn-login {
-      color: whitesmoke;
-      background-color: green;
+    .login-res .btn-login{
+      color: white;
+      background-color: black;
     }
-
-    .login-res .btn-login:hover {
+    .login-res .btn-login:hover{
       cursor: pointer;
-      border: 3px solid green;
+      border: 3px solid black !important;
       background-color: whitesmoke;
-      color: green;
+      color: black;
     }
-
-    .login-res .btn-register {
-      color: whitesmoke;
-      background-color: blue;
+    .login-res .btn-register{
+      color: white;
+      background-color: black;
     }
-
-    .login-res .btn-register:hover {
+    .login-res .btn-register:hover{
       cursor: pointer;
-      border: 3px solid blue;
+      border: 3px solid black !important   ;
       background-color: whitesmoke;
-      color: blue;
+      color: black;
     }
+    /* ================ design nav bar ========================*/
 
     /* Filter bar */
     .filter-bar {
