@@ -4,6 +4,7 @@
 
     body {
       margin: 0;
+      padding-top: 60px;
       font-family: Arial, Helvetica, sans-serif;
       color: #222;
       background: #fff;
@@ -11,47 +12,61 @@
 
     .container {
       width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     .container .contain {
       width: 85%;
+      margin: 0 auto;
     }
 
     /* Nav bar */
 
-    .contain .nav-bar {
+    .nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
       width: 100%;
       height: 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: #fff;
+      padding: 0 7.5%;
     }
 
     /* navbar left */
-    .contain .nav-bar .navbar-left {
+    .nav-bar .navbar-left {
       width: 35%;
     }
 
-    .contain .nav-bar .navbar-left ul {
+    .nav-bar .navbar-left ul {
       display: flex;
       justify-content: space-between;
       align-items: center;
       list-style-type: none;
-      padding: 10px 20px;
+      padding: 0;
+      margin: 0;
     }
 
-    .contain .nav-bar .navbar-left ul a {
+    .nav-bar .navbar-left ul li {
+      margin: 0 8px;
+    }
+
+    .nav-bar .navbar-left ul a {
       color: black;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 600;
       text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-bar .navbar-left ul a:hover {
+      color: #d0021b;
     }
 
     /* nav bar right */
-    .contain .nav-bar .navbar-right {
+    .nav-bar .navbar-right {
       width: 60%;
       display: flex;
       justify-content: space-between;
@@ -113,10 +128,11 @@
     }
 
     .nav-bar .navbar-right .search-login .choice .login-res button {
-      border: none;
+      border: 3px solid transparent;
       padding: 10px 25px;
       font-size: 16px;
       font-weight: 600;
+      transition: all 0.2s ease;
     }
 
     .login-res .btn-login {
@@ -152,6 +168,7 @@
       gap: 12px;
       padding: 16px 24px;
       flex-wrap: wrap;
+      margin-top: 40px;
       margin-left: 70px;
       margin-right: 70px;
     }
@@ -226,11 +243,24 @@
       /* border: 1px dashed #ccc; */
     }
 
+    .img-wrap img:hover {
+      	--scale: 1.1;
+    }
+
     .img-wrap img {
       width: 100%;
       height: 100%;
+      
       object-fit: contain;
       display: block;
+      --scale: 1;
+	    --transition-duration: 250ms;
+	    scale: var(--scale);
+	    transition:
+		  scale 
+		  var(--transition-duration) 
+		  ease-in-out;
+
     }
 
     .price-row {
@@ -281,8 +311,165 @@
       border: 1px solid #ccc;
     }
 
+    
+
+    /* Hamburger menu (hidden on desktop) */
+    .nav-toggle {
+      display: none;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      width: 22px;
+      height: 3px;
+      background: #222;
+      border-radius: 2px;
+    }
+
     @media (max-width: 900px) {
+      .nav-bar {
+        padding: 0 5%;
+      }
+
+      .nav-bar .navbar-left ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: #fff;
+        border-top: 1px solid #eee;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        padding: 10px 0;
+      }
+
+      .nav-toggle:checked ~ ul {
+        display: flex;
+      }
+
+      .nav-bar .navbar-left ul li {
+        margin: 0;
+        width: 100%;
+      }
+
+      .nav-bar .navbar-left ul a {
+        display: block;
+        padding: 12px 24px;
+        font-size: 14px;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-bar .navbar-left {
+        width: auto;
+      }
+
+      .nav-bar .navbar-right {
+        width: 100%;
+      }
+
+      .nav-bar .navbar-right .search-login {
+        width: 100%;
+      }
+
+      .nav-bar .navbar-right .search-login .choice {
+        width: auto;
+        gap: 10px;
+      }
+
+      .nav-bar .navbar-right .search-login .choice .login-res button {
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+
+      .nav-bar .navbar-right .search-login input {
+        width: 120px;
+      }
+
+      .nav-bar .navbar-right .logo {
+        width: 80px;
+      }
+
+      .container .contain {
+        width: 100%;
+      }
+
+      .filter-bar {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 16px;
+      }
+
       .grid {
         grid-template-columns: repeat(2, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .card {
+        padding: 0 10px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding-top: 50px;
+      }
+
+      .nav-bar {
+        height: 50px;
+        padding: 0 4%;
+      }
+
+      .nav-bar .navbar-right .search-login input {
+        width: 80px;
+        height: 26px;
+        font-size: 12px;
+      }
+
+      .nav-bar .navbar-right .logo {
+        width: 60px;
+      }
+
+      .nav-bar .navbar-right .search-login .choice .navbar-icon i {
+        font-size: 16px;
+      }
+
+      .nav-bar .navbar-right .search-login .choice .login-res button {
+        padding: 6px 10px;
+        font-size: 11px;
+      }
+
+      .filter-bar {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 12px 10px;
+        gap: 8px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 10px 0;
+      }
+
+      .item-count {
+        font-size: 14px;
+      }
+
+      .pill {
+        font-size: 12px;
+        padding: 5px 10px;
       }
     }
